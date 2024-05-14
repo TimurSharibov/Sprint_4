@@ -63,7 +63,7 @@ public class OrderTest {
         mainPage.enterOrderNumber("321654987564");
         mainPage.clickGoButton();
         mainPage.notFoundImageIsDisplayed();
-        System.out.println("Блабла");
+
         assertTrue(mainPage.notFoundImageIsDisplayed());
     }
 
