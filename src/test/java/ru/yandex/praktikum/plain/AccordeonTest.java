@@ -1,20 +1,16 @@
 package ru.yandex.praktikum.plain;
 
-import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.WebDriver;
-import ru.yandex.praktikum.WebDriverFactory;
 import ru.yandex.praktikum.page.MainPage;
 
 import static junit.framework.TestCase.assertTrue;
 
 @RunWith(Parameterized.class)
-public class AccordeonTest {
-    private static final String BROUSER = "chrome";
-    private WebDriver webDriver;
+public class AccordeonTest extends BaseTest{
+
     private int index;
     private String answer;
 
@@ -37,11 +33,6 @@ public class AccordeonTest {
         };
     }
 
-    @Before
-    public void setup() {
-        webDriver = WebDriverFactory.getWebDriver(BROUSER);
-        webDriver.get("https://qa-scooter.praktikum-services.ru");
-    }
 
     @Test
     public void accordionTest() {
@@ -52,8 +43,5 @@ public class AccordeonTest {
         assertTrue(answerIsDisplayed);
     }
 
-    @After
-    public void tearDown() {
-        webDriver.quit();
-    }
+
 }

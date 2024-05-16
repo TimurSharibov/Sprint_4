@@ -14,9 +14,8 @@ import static org.junit.Assert.assertTrue;
 
 
 @RunWith(Parameterized.class)
-public class OrderTest {
-    private static final String BROUSER = "chrome";
-    private WebDriver webDriver;
+public class OrderTest extends BaseTest {
+
     private final String name;
     private final String lastname;
     private final String address;
@@ -49,12 +48,7 @@ public class OrderTest {
         };
     }
 
-    @Before
-    public void setup() {
-        //webDriver = new FirefoxDriver();
-        webDriver = WebDriverFactory.getWebDriver(BROUSER);
-        webDriver.get("https://qa-scooter.praktikum-services.ru");
-    }
+
 
     @Test
     public void orderNotFound() {
@@ -83,8 +77,5 @@ public class OrderTest {
         orderPage.orderIssuedIsDisplayed();
     }
 
-    @After
-    public void tearDown() {
-        webDriver.quit();
-    }
+
 }
